@@ -1,139 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Safari Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" 
-    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <title>Siddharth sai myneni goes on Safari</title>
     <style>
-        body {
-            padding: 20px;
-            
-            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-           
+          body {
+            font-family: 'Arial', sans-serif,'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            background-color: #dcdbd0;
+            color: #0e081f;
         }
-        .header {
-            font-size: 2em;
-            margin-bottom: 20px;
+
+        .location {
+            width: 70px;
+            height: 70px;
+            margin: 7px;
         }
-        #locations, #score, #help {
-            display: inline-block;
-            margin-top: 10px;
-            font-weight: bold;
-        }
-        .game-grid img {
-            display: inline-block;
-            width: 100px;
-            height: 100px;
+
+        img {
+            width: 90px;
+            height: 90px;
             object-fit: cover;
+            margin: 5px;
         }
-        .game-grid {
-            margin-top: 20px;
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+        }
+        .game-field {
+            display: grid;
+            grid-template-columns: repeat(6, 100px);
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
         }
     </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
-    <header class="header">
-        Siddharth Sai Goes on Safari
+    <header class="text-center">
+        <h1>Siddharth sai myneni goes on Safari</h1>
     </header>
-    
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card info-card p-3 btn-small" onclick="alert('Click on the locations to find rare animals, watch out for the lion!')">
-                <p>Click on the locations to find rare animals, watch out for the lion!</p>
-            </div>
-            <div class="card info-card p-3 btn-small" id="locations">
-                <p>Number of locations checked is zero.</p>
-            </div>
-            <div class="card info-card p-3 btn-small" id="score">
-                <p>Score is zero.</p>
-            </div>
-            <div class="card info-card p-3 btn-small" onclick="help()">
-                <p>Click for help.</p>
-            </div>
-            <div class="card info-card p-3 btn-small" id="help">
-                <p>Help report</p>
-            </div>
-        </div>
-    </div>
-    <div class="container game-grid">
-        
-        <div class="row">
-            <div class="column">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-            </div>
+
+    <div class="text-center mt-4">
+        <div>
+            <p>Click on the locations to find rare animals, watch out for the lion.</p>
         </div>
 
-        <div class="row">
-            <div class="column">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-            </div>
+        <div id="locations">
+            <p>Number of locations checked is zero.</p>
         </div>
-        
-        <div class="row">
-            <div class="column">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-            </div>
+
+        <div id="score">
+            <p>Score is zero.</p>
         </div>
-        <div class="row">
-            <div class="column">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-            </div>
+
+        <div>
+            <p><a href="#" onclick="help()">Click for help.</a></p>
         </div>
-        <div class="row">
-            <div class="column">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-            </div>
-        </div>
-        <div class="row">
-            <div class="column">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-                <img src="tree.jpg">
-            </div>
+
+        <div id="help">
+            <p>Help report.</p>
         </div>
     </div>
-    <div class="row">
-        <div class="col-2"><img id="image0" onclick="check(0)" src="tree.jpg" alt="Tree"></div>
-        <div class="col-2"><img id="image1" onclick="check(1)" src="tree.jpg" alt="Tree"></div>
-        <div class="col-2"><img id="image2" onclick="check(2)" src="tree.jpg" alt="Tree"></div>
-        <div class="col-2"><img id="image3" onclick="check(3)" src="tree.jpg" alt="Tree"></div>
-        <div class="col-2"><img id="image4" onclick="check(4)" src="tree.jpg" alt="Tree"></div>
-        <div class="col-2"><img id="image5" onclick="check(5)" src="tree.jpg" alt="Tree"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-2"><img id="image0" onclick="check(0)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image1" onclick="check(1)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image2" onclick="check(2)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image3" onclick="check(3)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image4" onclick="check(4)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image5" onclick="check(5)" src="tree.jpg" alt="Tree"></div>
+        </div>
+        <div class="row">
+            <div class="col-2"><img id="image6" onclick="check(6)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image7" onclick="check(7)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image8" onclick="check(8)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image9" onclick="check(9)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image10" onclick="check(10)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image11" onclick="check(11)" src="tree.jpg" alt="Tree"></div>
+        </div>
+        <div class="row">
+            <div class="col-2"><img id="image12" onclick="check(12)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image13" onclick="check(13)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image14" onclick="check(14)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image15" onclick="check(15)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image16" onclick="check(16)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image17" onclick="check(17)" src="tree.jpg" alt="Tree"></div>
+        </div>
+        <div class="row">
+            <div class="col-2"><img id="image18" onclick="check(18)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image19" onclick="check(19)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image20" onclick="check(20)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image21" onclick="check(21)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image22" onclick="check(22)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image23" onclick="check(23)" src="tree.jpg" alt="Tree"></div>
+        </div>
+        <div class="row">
+            <div class="col-2"><img id="image24" onclick="check(24)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image25" onclick="check(25)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image26" onclick="check(26)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image27" onclick="check(27)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image28" onclick="check(28)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image29" onclick="check(29)" src="tree.jpg" alt="Tree"></div>
+        </div>
+        <div class="row">
+            <div class="col-2"><img id="image30" onclick="check(30)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image31" onclick="check(31)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image32" onclick="check(32)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image33" onclick="check(33)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image34" onclick="check(34)" src="tree.jpg" alt="Tree"></div>
+            <div class="col-2"><img id="image35" onclick="check(35)" src="tree.jpg" alt="Tree"></div>
+        </div>
     </div>
+
+    <script>
+
+        const ids = [];
+        for (let i = 0; i < 36; i++) {
+            ids.push(`image${i}`);
+        }
+
+        let score = 0;
+
+        let locationsVisited = 0;
+
+        let lastLocation = 0;
+        const lionLocation = Math.floor(Math.random() * 36);;
+        const zebraLocations = [];
+        while (zebraLocations.length < 5) {
+            let randomPosition = Math.floor(Math.random() * 36);
+            if (!zebraLocations.includes(randomPosition) && randomPosition !== lionLocation) {
+                zebraLocations.push(randomPosition);
+            }
+        }
+
+        let gameOver = false;
+
+        function check(position) {
+            if (gameOver) return;
+
+            const id = ids[position];
+            const imageElement = document.getElementById(id);
+
+            if (position === lionLocation) {
+                imageElement.src = 'Lion.jpg';
+                gameOver = true;
+                score -= 2;
+            }
+            else if (zebraLocations.includes(position)) {
+                imageElement.src = 'Zebra.jpg';
+                score += 4;
+                zebraLocations = zebraLocations.filter(z => z !== position);
+            }
+            else {
+                imageElement.src = 'Elephant.jpg';
+                score += 1;
+            }
+
+            locationsVisited++;
+            lastLocation = position;
+
+            document.getElementById('score').innerHTML = `<p>Score is ${score}.</p>`;
+            document.getElementById('locations').innerHTML = `<p>Number of locations checked is ${locationsVisited}.</p>`;
+        }
+
+        function help() {
+            const row = Math.floor(lastLocation / 6);
+            const col = lastLocation % 6;
+
+            const neighbors = [(lastLocation + 5) % 36, (lastLocation + 1) % 36, (lastLocation + 6) % 36,
+            (lastLocation + 30) % 36,
+            ];
+
+            if (neighbors.some(n => zebraLocations.includes(n))) {
+                document.getElementById('help').innerText = "I see stripes";
+            }
+            else {
+                const lionRow = Math.floor(lionLocation / 6);
+                const lionCol = lionLocation % 6;
+                const rowDiff = Math.abs(lionRow - row);
+                const colDiff = Math.abs(lionCol - col);
+                if (rowDiff <= 1 && colDiff <= 1) {
+                    document.getElementById('help').innerText = "Rawr";
+                }
+                else {
+                    document.getElementById('help').innerText = "It's grey";
+                }
+            }
+        }
+       
+    </script>
 
 </body>
+
 </html>

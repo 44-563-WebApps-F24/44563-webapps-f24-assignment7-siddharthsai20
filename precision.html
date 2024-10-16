@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddharth Speed Check</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        #target, #counter {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Siddharthsai myneni Speed Check</h1>
+        <div id="target">Your time</div>
+        <div id="counter">Count</div>
+        <button id="startButton">Start Timer</button>
+        <button id="stopButton">Stop Timer</button>
+    </div>
+    <script>
+        let stopTime = undefined;
+        function recordTime() {
+            stopTime = Date.now();  
+            console.log("Stop time:", stopTime);  
+        }
+        document.getElementById("stopButton").onclick = recordTime;
+        function startTime() {
+            stopTime = undefined;  
+            for (let i = 0; i <= 4; i++) {
+                setTimeout(function() {
+                    document.getElementById("counter").innerHTML = 4 - i;  
+                }, i * 1000);  
+            }
+            setTimeout(function() {
+                if (stopTime === undefined) {
+                    document.getElementById("target").innerHTML = "Too Slow";  
+                } else {
+                    let currentTime = Date.now();  
+                    let elapsedTime = currentTime - stopTime;
+                    document.getElementById("target").innerHTML = "Time was " + Math.abs(elapsedTime) + " milliseconds";
+                }
+            }, 4000);  
+        }
+        document.getElementById("startButton").onclick = startTime;
+    </script>
+</body>
+</html>

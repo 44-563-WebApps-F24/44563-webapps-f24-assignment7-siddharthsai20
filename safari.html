@@ -41,12 +41,26 @@
     <header class="header">
         Siddharth Sai Goes on Safari
     </header>
-    <p>Click on the locations to find rare animals, watch out for the lion!</p>
-    <div id="locations">Number of locations checked is zero.</div>
-    <div id="score">Score is zero.</div>
-    <p>Click for help.</p>
-    <div id="help">Help report</div>
-
+    
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card info-card p-3 btn-small" onclick="alert('Click on the locations to find rare animals, watch out for the lion!')">
+                <p>Click on the locations to find rare animals, watch out for the lion!</p>
+            </div>
+            <div class="card info-card p-3 btn-small" id="locations">
+                <p>Number of locations checked is zero.</p>
+            </div>
+            <div class="card info-card p-3 btn-small" id="score">
+                <p>Score is zero.</p>
+            </div>
+            <div class="card info-card p-3 btn-small" onclick="help()">
+                <p>Click for help.</p>
+            </div>
+            <div class="card info-card p-3 btn-small" id="help">
+                <p>Help report</p>
+            </div>
+        </div>
+    </div>
     <div class="container game-grid">
         
         <div class="row">

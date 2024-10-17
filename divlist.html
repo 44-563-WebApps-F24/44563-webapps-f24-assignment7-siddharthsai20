@@ -57,6 +57,7 @@
 	<button onclick="addEnd()">Add end</button>
 	<button onclick="addFront()">Add front</button>
 	<button onclick="remove()">Remove</button>
+    <button onclick="swap()">Swap</button>
 	
 
 	<script>
@@ -105,7 +106,25 @@
 				alert("No items to remove.");
 			}
 		}
-		
+		function swap() {
+			let divListItems = document.getElementsByClassName("divlist");
+			let length = divListItems.length;
+			if (length > 1) 
+            {
+				let index1 = Math.floor(Math.random() * length);
+				let index2 = Math.floor(Math.random() * length);
+				while (index1 === index2) {
+					index2 = Math.floor(Math.random() * length);
+				}
+				let item1 = divListItems[index1];
+				let item2 = divListItems[index2];
+				let parent = item1.parentNode;
+				let next1 = item1.nextSibling === item2 ? item1 : item1.nextSibling;
+				let next2 = item2.nextSibling === item1 ? item2 : item2.nextSibling;
+				parent.insertBefore(item2, next1);
+				parent.insertBefore(item1, next2);
+			}
+		}
 		
 	</script>
 </body>

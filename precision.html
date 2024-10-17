@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siddharth Speed Check</title>
+    <title>Siddharthsai myneni Speed Check</title>
     <style>
         html, body {
             height: 100%;
@@ -38,28 +38,37 @@
     </div>
     <script>
         let stopTime = undefined;
+
         function recordTime() {
             stopTime = Date.now();  
             console.log("Stop time:", stopTime);  
         }
+        
         document.getElementById("stopButton").onclick = recordTime;
+
         function startTime() {
             stopTime = undefined;  
-            for (let i = 0; i <= 4; i++) {
-                setTimeout(function() {
-                    document.getElementById("counter").innerHTML = 4 - i;  
-                }, i * 1000);  
+
+            const countdownStart = Math.floor(Math.random() * 9) + 2;
+
+            
+            for (let i = countdownStart; i >= 0; i--) {
+                setTimeout(() => {
+                    document.getElementById('counter').innerHTML = i;
+                }, (countdownStart - i) * 1000);  
             }
-            setTimeout(function() {
+
+  
+            setTimeout(() => {
                 if (stopTime === undefined) {
-                    document.getElementById("target").innerHTML = "Too Slow";  
+                    document.getElementById('target').innerHTML = "Too Slow";
                 } else {
-                    let currentTime = Date.now();  
-                    let elapsedTime = currentTime - stopTime;
-                    document.getElementById("target").innerHTML = "Time was " + Math.abs(elapsedTime) + " milliseconds";
+                    const elapsedTime = Math.abs(Date.now() - stopTime);  
+                    document.getElementById('target').innerHTML = "Time was " + elapsedTime + " ms";
                 }
-            }, 4000);  
+            }, countdownStart * 1000);  
         }
+
         document.getElementById("startButton").onclick = startTime;
     </script>
 </body>

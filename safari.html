@@ -159,17 +159,17 @@
             const imageElement = document.getElementById(id);
 
             if (position === lionLocation) {
-                imageElement.src = 'Lion.jpg';
+                imageElement.src = 'lion.jpg';
                 gameOver = true;
                 score -= 2;
             }
             else if (zebraLocations.includes(position)) {
-                imageElement.src = 'Zebra.jpg';
+                imageElement.src = 'zebra.jpg';
                 score += 4;
                 zebraLocations = zebraLocations.filter(z => z !== position);
             }
             else {
-                imageElement.src = 'Elephant.jpg';
+                imageElement.src = 'elephant.jpg';
                 score += 1;
             }
 
